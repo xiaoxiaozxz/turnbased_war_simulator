@@ -1,6 +1,6 @@
 from core.unit import CUnit, UnitAttr
 from core.state import CBattleState
-from env.simulator import CBattleSimulator
+from simulator_env.simulator import CBattleSimulator
 from ai.agents import CRandomAgent,CGreedyAgent
 
 oEnv = CBattleSimulator(iMaxTurns=30)

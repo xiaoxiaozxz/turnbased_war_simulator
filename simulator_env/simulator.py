@@ -93,13 +93,10 @@ class CBattleSimulator:
         while not self.m_Done:
             if self.m_State.GetCurrentTurn() % 2 == 0:
                 iAttacker, iSkillID, iTarget = oPlayerAI.select(self.m_State, PLAYER_CAMP)
-                # 合法性校验
                 if iAttacker not in lPlayer:
                     iAttacker = lPlayer[0] if lPlayer else -1
             else:
-                 # --- 怪物回合（固定随机攻击）---
                 iAttacker, iSkillID, iTarget = CGreedyAgent().select(self.m_State, MONSTER_CAMP)
-                # 合法性校验
                 if iAttacker not in lMonster:
                     iAttacker = lMonster[0] if lMonster else -1
 
@@ -118,11 +115,10 @@ class CBattleSimulator:
 def SimulateBattle(oPlayerAgent, oMonsterAgent, iMaxTurns=30, lUnits: list[CUnit]=[], seed=None, bVerbose: bool = False):
     if seed:
         random.seed(seed)
-    # 创建单位
     oHero = CUnit({
         UnitAttr.NAME: "Hero", UnitAttr.CUR_HP: 30, UnitAttr.MAX_HP: 30,
         UnitAttr.ATK: 8, UnitAttr.CAMP: PLAYER_CAMP,
-        UnitAttr.DEF: 2,  # 假设给点防御
+        UnitAttr.DEF: 2,
         UnitAttr.SKILLS: {0:CSkill(0, "普攻", 1.0), 1:CSkill(1, "重击", 1.5)}
     })
     

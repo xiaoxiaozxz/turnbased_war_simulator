@@ -72,3 +72,6 @@ Thumbs.db
 experiments/results/
 experiments/outputs/
 experiments/plots/
+
+# Other
+plan.txt

@@ -9,7 +9,7 @@ if parent_dir not in sys.path:
 from core import CBattleState, CUnit, CSkill, PLAYER_CAMP, MONSTER_CAMP, UnitAttr
 from ai.actions import GetLegalActions
 from ai.agents import CRandomAgent
-from simulated_env.simulator import CBattleSimulator
+from simulator_env.simulator import CBattleSimulator
 
 
 # region 实验案例

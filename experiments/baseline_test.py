@@ -13,7 +13,7 @@ if parent_dir not in sys.path:
 import random, time, csv
 import matplotlib.pyplot as plt
 from ai.agents import CRandomAgent
-from env.simulator import CBattleSimulator, SimulateBattle
+from simulator_env.simulator import CBattleSimulator, SimulateBattle
 from core.unit import PLAYER_CAMP,MONSTER_CAMP
 
 N = 1000

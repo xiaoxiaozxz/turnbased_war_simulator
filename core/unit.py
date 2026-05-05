@@ -40,9 +40,7 @@ class CUnit:
             UnitAttr.DEF: 2,
             UnitAttr.SKILLS: {0: CSkill(0, "普通攻击", 1.0),}
         }
-        # 用传入数据覆盖默认值
         defaults.update(dUnit)
-        # 批量设置属性
         for key, value in defaults.items():
             setattr(self, key, value)
     
