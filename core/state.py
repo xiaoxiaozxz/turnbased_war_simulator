@@ -28,11 +28,11 @@ class CBattleState:
 
     def GetWinner(self) -> int | None:
         if self.m_Curturn >= self.m_MaxTurns:
-            return None
+            return -1
         for oUnit in self.m_Units:
             if oUnit.IsAlive():
                 return oUnit.GetCamp()
-        return None
+        return -1
     
     def GetAllUnitByCamp(self, iCamp:int) -> list[CUnit]:
         """Retrieve all surviving objects based on the camp"""
